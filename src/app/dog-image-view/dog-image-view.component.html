@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h1>Dog Image Viewer</h1>
+    <div class="container" id="btn-dogs">
+        <button class="btn btn-primary" (click)="getRandomDogImage()" [disabled]="isLoading">Get Random Dog Image</button>
+
+    </div>
+    <div class="contianer" *ngIf="randomDogImageUrl">
+      <img [src]="randomDogImageUrl" alt="Random Dog" />
+    </div>
+    <div *ngIf="isLoading">
+      Loading...
+    </div>
+  </div>

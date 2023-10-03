@@ -1,0 +1,12 @@
+img{
+    width: 10vw;
+}
+.contianer{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+#btn-dogs{
+    display: flex;
+    flex-direction: column;
+}
