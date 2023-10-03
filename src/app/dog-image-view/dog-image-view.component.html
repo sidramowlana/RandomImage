@@ -2,12 +2,20 @@
     <h1>Dog Image Viewer</h1>
     <div class="container" id="btn-dogs">
         <button class="btn btn-primary" (click)="getRandomDogImage()" [disabled]="isLoading">Get Random Dog Image</button>
-
+        <br>
+        <button class="btn btn-primary" (click)="addToFavorites()" [disabled]="isLoading">Add to Favorites</button>
     </div>
     <div class="contianer" *ngIf="randomDogImageUrl">
       <img [src]="randomDogImageUrl" alt="Random Dog" />
     </div>
     <div *ngIf="isLoading">
       Loading...
+    </div>
+    <br>
+    <br>
+    <h2>Favorites</h2>
+    <div *ngFor="let image of favoriteImagesList; let i = index">
+      <img [src]="image" alt="Favorite Dog" />
+      <button class="btn btn-danger" (click)="removeFromFavorites(i)">Remove</button>
     </div>
   </div>

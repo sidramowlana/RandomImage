@@ -11,6 +11,8 @@ export class DogImageViewComponent {
 randomDogImageUrl?: string;
 isLoading: boolean = false;
 
+favoriteImagesList: string[] = [];
+
 constructor(private http: HttpClient) { }
 
 ngOnInit(): void {
@@ -25,5 +27,14 @@ getRandomDogImage() {
       this.isLoading = false;
     });
 }
+addToFavorites() {
+  if (this.randomDogImageUrl) {
+    this.favoriteImagesList.push(this.randomDogImageUrl);
+  }
+}
 
+removeFromFavorites(index: number) {
+  this.favoriteImagesList.splice(index, 1);
+}
+       
 }
